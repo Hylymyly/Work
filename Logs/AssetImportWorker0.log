@@ -1,0 +1,259 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.23f1 (c5d91304a876) revision 12966163'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19044.1526; Version 2009; 64bit' Language: 'ru' Physical Memory: 8037 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+D:\GamesY\2020.3.23f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/diplom/New Unity Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+57306
+Successfully changed project path to: D:/diplom/New Unity Project
+D:/diplom/New Unity Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 45.29 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.23f1 (c5d91304a876)
+[Subsystems] Discovering subsystems at path D:/GamesY/2020.3.23f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/diplom/New Unity Project/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 (ID=0x1c8d)
+    Vendor:   
+    VRAM:     4021 MB
+    Driver:   30.0.14.9709
+Initialize mono
+Mono path[0] = 'D:/GamesY/2020.3.23f1/Editor/Data/Managed'
+Mono path[1] = 'D:/GamesY/2020.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/GamesY/2020.3.23f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56452
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/GamesY/2020.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001005 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 28.23 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.652 seconds
+Domain Reload Profiling:
+	ReloadAssembly (653ms)
+		BeginReloadAssembly (47ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (542ms)
+			LoadAssemblies (46ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (139ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (283ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (28ms)
+				BeforeProcessingInitializeOnLoad (15ms)
+				ProcessInitializeOnLoadAttributes (73ms)
+				ProcessInitializeOnLoadMethodAttributes (163ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.033122 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.911 seconds
+Domain Reload Profiling:
+	ReloadAssembly (912ms)
+		BeginReloadAssembly (134ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (728ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (253ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (280ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1516 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 82.1 MB.
+System memory in use after: 82.2 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1962.
+Total: 2.956800 ms (FindLiveObjects: 0.165600 ms CreateObjectMapping: 0.048900 ms MarkObjects: 2.668900 ms  DeleteObjects: 0.072400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Traffic/Scripts/Editor/VehicleEditor.cs
+  artifactKey: Guid(0aa0f5086b9e3bb4e8056d7e7f462add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/VehicleEditor.cs using Guid(0aa0f5086b9e3bb4e8056d7e7f462add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46f8249eed16533e532dac9e4fcbf73') in 0.041474 seconds 
+  Import took 0.056113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Traffic/Scripts/Editor/TrafficSystemGizmos.cs
+  artifactKey: Guid(1b1ee7d23e45e2d43b738d75e11a5f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/TrafficSystemGizmos.cs using Guid(1b1ee7d23e45e2d43b738d75e11a5f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09118298b7df9364c7d8125d57c8c21e') in 0.004828 seconds 
+  Import took 0.060552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Traffic/Scripts/Editor/TrafficEditorInspector.cs
+  artifactKey: Guid(e64108d6725f5eb4d80407a5fcea6d66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/TrafficEditorInspector.cs using Guid(e64108d6725f5eb4d80407a5fcea6d66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60106d0acad321ce5bd071421680308e') in 0.005411 seconds 
+  Import took 0.032662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Traffic/Scripts/Editor/EditorHelper.cs
+  artifactKey: Guid(cb606a2d3cf799e4c9a2183355c940a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/EditorHelper.cs using Guid(cb606a2d3cf799e4c9a2183355c940a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab3f483c54308294387978b0ebda6d5a') in 0.004170 seconds 
+  Import took 0.054459 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000600 seconds.
+  path: Assets/Traffic/Scripts/Editor/IntersectionEditor.cs
+  artifactKey: Guid(e3426e75dd5e4504d8d6a4a17d6e1df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/IntersectionEditor.cs using Guid(e3426e75dd5e4504d8d6a4a17d6e1df1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e6478156be7648cd2844b54f72fea36') in 0.028418 seconds 
+  Import took 0.032748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Traffic/Scripts/Editor/TrafficEditor.cs
+  artifactKey: Guid(75945a817795cfe4a8dcae3ae12e44b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor/TrafficEditor.cs using Guid(75945a817795cfe4a8dcae3ae12e44b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e12cabd16d1d6729fa1ee0e866e02229') in 0.006625 seconds 
+  Import took 0.026374 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 145.134621 seconds.
+  path: Assets/Traffic/Scripts/Editor
+  artifactKey: Guid(e96330aa770f3d947afa5520028d6ad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Editor using Guid(e96330aa770f3d947afa5520028d6ad2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6671b17d01dd1f91d28e8a55dd37069d') in 0.004827 seconds 
+  Import took 0.019341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.136788 seconds.
+  path: Assets/Traffic/Scripts/TrafficSystem.cs
+  artifactKey: Guid(29f344d0f8a5f0b4a80a47e9946d8e85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/TrafficSystem.cs using Guid(29f344d0f8a5f0b4a80a47e9946d8e85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f26e23de04b24b8eda120d3c766ac46') in 0.009261 seconds 
+  Import took 0.014438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011055 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4032610c33ff57b88cd13c56b55bbf17') in 0.026308 seconds 
+  Import took 0.044849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.083626 seconds.
+  path: Assets/Traffic/Scripts/WheelDrive.cs
+  artifactKey: Guid(5021f9004f348d74abb4f0ae3ed02375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/WheelDrive.cs using Guid(5021f9004f348d74abb4f0ae3ed02375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0a813cd03b550a5a5ebc642ca6166c8') in 0.004462 seconds 
+  Import took 0.026883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.101181 seconds.
+  path: Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Standard.shader
+  artifactKey: Guid(7f50d1ec77e2cc9459ca9d36924ffc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Standard.shader using Guid(7f50d1ec77e2cc9459ca9d36924ffc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99bc2e9f6dc9515c31ba6ce1a81af46b') in 0.009480 seconds 
+  Import took 0.027120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.101540 seconds.
+  path: Assets/Traffic/Scripts/Waypoint.cs
+  artifactKey: Guid(399c99cbf30f13c4f9a848c618de7a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Waypoint.cs using Guid(399c99cbf30f13c4f9a848c618de7a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de3331b34417956b8dee47b76fbfa1c5') in 0.005744 seconds 
+  Import took 0.008738 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006036 seconds.
+  path: Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Standard LWRP.shader
+  artifactKey: Guid(a41c5742143408246a64233e4c25dc2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Standard LWRP.shader using Guid(a41c5742143408246a64233e4c25dc2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5702ed1f0dfdb02097c59ffbe6a59cf7') in 0.004632 seconds 
+  Import took 0.007477 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.108953 seconds.
+  path: Assets/Traffic/Scripts/Segment.cs
+  artifactKey: Guid(69c0d85471449dd49be2e12eca329466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts/Segment.cs using Guid(69c0d85471449dd49be2e12eca329466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a81bfc21d60e8f79c5dda72497935e08') in 0.004109 seconds 
+  Import took 0.031579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.031233 seconds.
+  path: Assets/Traffic/Scripts
+  artifactKey: Guid(292c943518979604d894cc15dd6c08db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Scripts using Guid(292c943518979604d894cc15dd6c08db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '193639b8c57a6065c77d988869a5e6a1') in 0.008012 seconds 
+  Import took 0.010995 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053920 seconds.
+  path: Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Sky.shader
+  artifactKey: Guid(32f82700d2f3c75449479a861f3b9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic/Examples/Addons/Minimalist Free v2.3/Shaders/Minimalist Free Sky.shader using Guid(32f82700d2f3c75449479a861f3b9c6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec135e95679ac786929cd764a4f9aee2') in 0.004579 seconds 
+  Import took 0.006807 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
