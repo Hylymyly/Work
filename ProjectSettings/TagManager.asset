@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Waypoint
+  - AutonomousVehicle
+  - SpeedControl
+  - SpeedControlEnd
+  - SpeedControlPol
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - Waypoint
   - Water
   - UI
-  - 
+  - AutonomousVehicle
   - 
   - 
   - 

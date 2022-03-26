@@ -56,7 +56,7 @@ namespace TrafficSimulation {
         private int pastTargetSegment = -1;
         private Target currentTarget;
         private Target futureTarget;
-
+        private int isCalculate = 1; 
         void Start()
         {
             wheelDrive = this.GetComponent<WheelDrive>();
@@ -73,9 +73,44 @@ namespace TrafficSimulation {
                 return;
 
             WaypointChecker();
-            MoveVehicle();
+            if (isCalculate == 1)
+            {
+                MoveVehicle();
+                wheelDrive.steeringLerp = 5;
+                wheelDrive.steeringSpeedMax = 8;
+            }
+            else if (isCalculate == 2)
+            {
+                MoveVehicle();
+                wheelDrive.steeringSpeedMax = 6;
+            }
+            else if (isCalculate == 3)
+            {
+                MoveVehicle();
+                wheelDrive.steeringLerp = 5;
+                wheelDrive.steeringSpeedMax = 5;
+            }
         }
 
+        public void OnTriggerEnter(Collider other)
+        {          
+                Debug.Log("OnCollisionEnter");
+                if (other.gameObject.tag == "SpeedControl")
+                {
+                    Debug.Log("If");
+                    isCalculate = 2;                   
+                }  
+                if (other.gameObject.tag == "SpeedControlEnd")
+                {
+                    Debug.Log("If2");
+                    isCalculate = 1;
+                }
+                if (other.gameObject.tag == "SpeedControlPol")
+                {
+                    Debug.Log("If3");
+                    isCalculate = 3;
+                }   
+        }
 
         void WaypointChecker(){
             GameObject waypoint = trafficSystem.segments[currentTarget.segment].waypoints[currentTarget.waypoint].gameObject;
