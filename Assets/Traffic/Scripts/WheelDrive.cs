@@ -17,41 +17,41 @@ namespace TrafficSimulation{
 
     public class WheelDrive : MonoBehaviour
     {
-        [Tooltip("Downforce applied to the vehicle")]
+        [Tooltip("Притяжение")]
         public float downForce = 100f;
 
-        [Tooltip("Maximum steering angle of the wheels")]
+        [Tooltip("Максимальный угол поворота колес")]
         public float maxAngle = 30f;
 
-        [Tooltip("Speed at which we will reach the above steering angle (lerp)")]
+        [Tooltip("Скорость при повороте")]
         public float steeringLerp = 5f;
         
-        [Tooltip("Max speed (in unit choosen below) when the vehicle is about to steer")]
+        [Tooltip("Максимальная скорость при повороте")]
         public float steeringSpeedMax = 20f;
 
-        [Tooltip("Maximum torque applied to the driving wheels")]
+        [Tooltip("Крутящий момент")]
         public float maxTorque = 300f;
 
-        [Tooltip("Maximum brake torque applied to the driving wheels")]
+        [Tooltip("ТОрмозной момент")]
         public float brakeTorque = 30000f;
 
         [Tooltip("Unit Type")]
         public UnitType unitType;
 
-        [Tooltip("Min Speed - when driving (not including stops/brakes), in the unit choosen above. Should be > 0.")]
+        [Tooltip("Минимальная скорость при движении")]
         public float minSpeed = 5;
 
-        [Tooltip("Max Speed in the unit choosen above")]
+        [Tooltip("Максимальная скорость")]
         public float maxSpeed = 50;
 
-        [Tooltip("Drag the wheel shape here.")]
+        [Tooltip("Колеса")]
         public GameObject leftWheelShape;
         public GameObject rightWheelShape;
 
-        [Tooltip("Whether you want to animate the wheels")]
+        [Tooltip("Анимирование")]
         public bool animateWheels = true;
         
-        [Tooltip("The vehicle's drive type: rear-wheels drive, front-wheels drive or all-wheels drive.")]
+        [Tooltip("Прив")]
         public DriveType driveType;
 
         private WheelCollider[] wheels;

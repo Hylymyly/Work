@@ -26,12 +26,12 @@ namespace TrafficSimulation {
             EditorGUI.BeginDisabledGroup(intersection.intersectionType != IntersectionType.TRAFFIC_LIGHT);
 
             EditorGUILayout.LabelField("Traffic Lights", EditorStyles.boldLabel);
-            intersection.lightsDuration = EditorGUILayout.FloatField("Light Duration (in s.)", intersection.lightsDuration);
-            intersection.orangeLightDuration = EditorGUILayout.FloatField("Orange Light Duration (in s.)", intersection.orangeLightDuration);
+            intersection.lightsDuration = EditorGUILayout.FloatField("Продолжительность", intersection.lightsDuration);
+            intersection.orangeLightDuration = EditorGUILayout.FloatField("ПРодолжительность оранжевого", intersection.orangeLightDuration);
             SerializedProperty sLightsNbr1 = serializedObject.FindProperty("lightsNbr1");
             SerializedProperty sLightsNbr2 = serializedObject.FindProperty("lightsNbr2");
-            EditorGUILayout.PropertyField(sLightsNbr1, new GUIContent("Lights #1 (first to be red)"), true);
-            EditorGUILayout.PropertyField(sLightsNbr2, new GUIContent("Lights #2"), true);
+            EditorGUILayout.PropertyField(sLightsNbr1, new GUIContent("Путь 1"), true);
+            EditorGUILayout.PropertyField(sLightsNbr2, new GUIContent("Путь 2"), true);
             serializedObject.ApplyModifiedProperties();
             
             EditorGUI.EndDisabledGroup();

@@ -9,6 +9,7 @@ TagManager:
   - SpeedControl
   - SpeedControlEnd
   - SpeedControlPol
+  - RotateVeh
   layers:
   - Default
   - TransparentFX

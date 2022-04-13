@@ -22,31 +22,30 @@ namespace TrafficSimulation {
     public class VehicleAI : MonoBehaviour
     {
         [Header("Traffic System")]
-        [Tooltip("Current active traffic system")]
+        [Tooltip("Активный трафик")]
         public TrafficSystem trafficSystem;
 
-        [Tooltip("Determine when the vehicle has reached its target. Can be used to \"anticipate\" earlier the next waypoint (the higher this number his, the earlier it will anticipate the next waypoint)")]
+        [Tooltip("Достижение машины цели, чем больше число, тем раньше будет считать")]
         public float waypointThresh = 6;
-
 
         [Header("Radar")]
 
-        [Tooltip("Empty gameobject from where the rays will be casted")]
+        [Tooltip("Gameobject")]
         public Transform raycastAnchor;
 
-        [Tooltip("Length of the casted rays")]
+        [Tooltip("Длина")]
         public float raycastLength = 5;
 
-        [Tooltip("Spacing between each rays")]
+        [Tooltip("Расстояние между лучами")]
         public int raySpacing = 2;
 
-        [Tooltip("Number of rays to be casted")]
+        [Tooltip("Количество")]
         public int raysNumber = 6;
 
-        [Tooltip("If detected vehicle is below this distance, ego vehicle will stop")]
+        [Tooltip("Расстояние перед столкновением")]
         public float emergencyBrakeThresh = 2f;
 
-        [Tooltip("If detected vehicle is below this distance (and above, above distance), ego vehicle will slow down")]
+        [Tooltip("Замедление от расстояния")]
         public float slowDownThresh = 4f;
 
         [HideInInspector] public Status vehicleStatus = Status.GO;
@@ -56,9 +55,13 @@ namespace TrafficSimulation {
         private int pastTargetSegment = -1;
         private Target currentTarget;
         private Target futureTarget;
-        private int isCalculate = 1; 
+        private int isCalculate = 1;
+        private int rotControl = 0; //0 - ок, 1- право
+        private int x = 0;
+        private int y = 0;
         void Start()
         {
+            Debug.Log("start");
             wheelDrive = this.GetComponent<WheelDrive>();
 
             if(trafficSystem == null)
@@ -71,7 +74,7 @@ namespace TrafficSimulation {
         void Update(){
             if(trafficSystem == null)
                 return;
-
+            Debug.Log("ROTATIONCONTROL: " + rotControl);
             WaypointChecker();
             if (isCalculate == 1)
             {
@@ -109,7 +112,14 @@ namespace TrafficSimulation {
                 {
                     Debug.Log("If3");
                     isCalculate = 3;
-                }   
+                } 
+                if (other.gameObject.tag == "RotateVeh")
+                {
+                    Debug.Log("x: "+x+" y:"+y);
+                    x = 0;
+                    y = 1;
+                    Debug.Log("x: " + x + " y:" + y);
+                }
         }
 
         void WaypointChecker(){
@@ -130,7 +140,8 @@ namespace TrafficSimulation {
                 futureTarget.waypoint = currentTarget.waypoint + 1;
                 if(futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                     futureTarget.waypoint = 0;
-                    futureTarget.segment = GetNextSegmentId();
+                    Debug.Log("WaypointChecker01");
+                    futureTarget.segment = GetNextSegmentId(x,y);
                 }
             }
         }
@@ -292,10 +303,19 @@ namespace TrafficSimulation {
             }
         }
 
-        int GetNextSegmentId(){
+        int GetNextSegmentId(int x, int y){
             if(trafficSystem.segments[currentTarget.segment].nextSegments.Count == 0)
                 return 0;
-            int c = Random.Range(0, trafficSystem.segments[currentTarget.segment].nextSegments.Count);
+            int c = Random.Range(x, trafficSystem.segments[currentTarget.segment].nextSegments.Count-y);
+            return trafficSystem.segments[currentTarget.segment].nextSegments[c].id;
+        }
+
+        int GetNextSegmentIdStraight()
+        {
+            int[] randMas = { 0, 2 };
+            if (trafficSystem.segments[currentTarget.segment].nextSegments.Count == 0)
+                return 0;
+            int c = randMas[Random.Range(0, randMas.Length)];
             return trafficSystem.segments[currentTarget.segment].nextSegments[c].id;
         }
 
@@ -325,7 +345,8 @@ namespace TrafficSimulation {
 
             if(futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                 futureTarget.waypoint = 0;
-                futureTarget.segment = GetNextSegmentId();
+                    Debug.Log("WaypointChecker02");
+                    futureTarget.segment = GetNextSegmentId(x,y);
             }
         }
 
