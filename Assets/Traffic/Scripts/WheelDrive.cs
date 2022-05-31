@@ -102,7 +102,6 @@ namespace TrafficSimulation{
 
                 if (wheel.transform.localPosition.z >= 0 && driveType != DriveType.RearWheelDrive) wheel.motorTorque = torque;
 
-
                 // Update visual wheels if allowed
                 if(animateWheels){
                     Quaternion q;

@@ -61,7 +61,6 @@ namespace TrafficSimulation {
         private int y = 0;
         void Start()
         {
-            Debug.Log("start");
             wheelDrive = this.GetComponent<WheelDrive>();
 
             if(trafficSystem == null)
@@ -74,7 +73,6 @@ namespace TrafficSimulation {
         void Update(){
             if(trafficSystem == null)
                 return;
-            Debug.Log("ROTATIONCONTROL: " + rotControl);
             WaypointChecker();
             if (isCalculate == 1)
             {
@@ -97,28 +95,32 @@ namespace TrafficSimulation {
 
         public void OnTriggerEnter(Collider other)
         {          
-                Debug.Log("OnCollisionEnter");
                 if (other.gameObject.tag == "SpeedControl")
                 {
-                    Debug.Log("If");
                     isCalculate = 2;                   
                 }  
                 if (other.gameObject.tag == "SpeedControlEnd")
                 {
-                    Debug.Log("If2");
                     isCalculate = 1;
                 }
                 if (other.gameObject.tag == "SpeedControlPol")
                 {
-                    Debug.Log("If3");
                     isCalculate = 3;
                 } 
                 if (other.gameObject.tag == "RotateVeh")
                 {
-                    Debug.Log("x: "+x+" y:"+y);
                     x = 0;
                     y = 1;
-                    Debug.Log("x: " + x + " y:" + y);
+                }
+                if (other.gameObject.tag == "RotateVeh2")
+                {
+                    x = 1;
+                    y = 0;
+                }
+                if (other.gameObject.tag == "CancleRotate")
+                {
+                    x = 0;
+                    y = 0;
                 }
         }
 
@@ -131,23 +133,25 @@ namespace TrafficSimulation {
             //Переход к селд точке
             if(wpDist.magnitude < waypointThresh){
                 currentTarget.waypoint++;
-                if(currentTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
+                //Debug.Log("Первое условие"+ gameObject + " ***** " + (currentTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count));
+                if (currentTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                     pastTargetSegment = currentTarget.segment;
                     currentTarget.segment = futureTarget.segment;
                     currentTarget.waypoint = 0;
                 }
-
                 futureTarget.waypoint = currentTarget.waypoint + 1;
-                if(futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
+
+                //Debug.Log("УСЛОВИЕ " + gameObject.ToString()+" ***** " + (futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count));
+
+                if (futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                     futureTarget.waypoint = 0;
-                    Debug.Log("WaypointChecker01");
                     futureTarget.segment = GetNextSegmentId(x,y);
+                   
                 }
             }
         }
 
         void MoveVehicle(){
-
             float acc = 1;
             float brake = 0;
             float steering = 0;
@@ -246,7 +250,9 @@ namespace TrafficSimulation {
 
                 //Движение по пути
                 if(acc > 0f){
-                    Vector3 desiredVel = trafficSystem.segments[currentTarget.segment].waypoints[currentTarget.waypoint].transform.position - this.transform.position;
+                    Vector3 vec = new Vector3(Random.Range(-3, 3), 0, 0);
+                    Debug.Log(vec);
+                    Vector3 desiredVel = trafficSystem.segments[currentTarget.segment].waypoints[currentTarget.waypoint].transform.position - this.transform.position + vec;
                     steering = Mathf.Clamp(this.transform.InverseTransformDirection(desiredVel.normalized).x, -1f, 1f);
                 }
 
@@ -310,15 +316,6 @@ namespace TrafficSimulation {
             return trafficSystem.segments[currentTarget.segment].nextSegments[c].id;
         }
 
-        int GetNextSegmentIdStraight()
-        {
-            int[] randMas = { 0, 2 };
-            if (trafficSystem.segments[currentTarget.segment].nextSegments.Count == 0)
-                return 0;
-            int c = randMas[Random.Range(0, randMas.Length)];
-            return trafficSystem.segments[currentTarget.segment].nextSegments[c].id;
-        }
-
         void SetWaypointVehicleIsOn(){
             foreach(Segment segment in trafficSystem.segments){
                 if(segment.IsOnSegment(this.transform.position)){
@@ -345,7 +342,6 @@ namespace TrafficSimulation {
 
             if(futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                 futureTarget.waypoint = 0;
-                    Debug.Log("WaypointChecker02");
                     futureTarget.segment = GetNextSegmentId(x,y);
             }
         }
