@@ -4,9 +4,6 @@ using UnityEngine;
 
 namespace TrafficSimulation {
 
-    /*
-        Торможение и интерполяция поворота
-    */
 
     public struct Target{
         public int segment;
@@ -133,7 +130,7 @@ namespace TrafficSimulation {
             //Переход к селд точке
             if(wpDist.magnitude < waypointThresh){
                 currentTarget.waypoint++;
-                //Debug.Log("Первое условие"+ gameObject + " ***** " + (currentTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count));
+           
                 if (currentTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                     pastTargetSegment = currentTarget.segment;
                     currentTarget.segment = futureTarget.segment;
@@ -141,8 +138,7 @@ namespace TrafficSimulation {
                 }
                 futureTarget.waypoint = currentTarget.waypoint + 1;
 
-                //Debug.Log("УСЛОВИЕ " + gameObject.ToString()+" ***** " + (futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count));
-
+         
                 if (futureTarget.waypoint >= trafficSystem.segments[currentTarget.segment].waypoints.Count){
                     futureTarget.waypoint = 0;
                     futureTarget.segment = GetNextSegmentId(x,y);
@@ -165,6 +161,7 @@ namespace TrafficSimulation {
 
             //Проверка остановки машины на стопе
             if(vehicleStatus == Status.STOP){
+                Debug.Log("STOP  " + gameObject);
                 acc = 0;
                 brake = 1;
                 wheelDrive.maxSpeed = Mathf.Min(wheelDrive.maxSpeed / 2f, 5f);
@@ -173,6 +170,7 @@ namespace TrafficSimulation {
                 
                 //Уменьшитб ускорение
                 if(vehicleStatus == Status.SLOW_DOWN){
+                    Debug.Log("SLOW_DOWN  " + gameObject);
                     acc = .3f;
                     brake = 0f;
                 }
@@ -251,7 +249,7 @@ namespace TrafficSimulation {
                 //Движение по пути
                 if(acc > 0f){
                     Vector3 vec = new Vector3(Random.Range(-3, 3), 0, 0);
-                    Debug.Log(vec);
+                    Debug.Log(vec + " " + gameObject);
                     Vector3 desiredVel = trafficSystem.segments[currentTarget.segment].waypoints[currentTarget.waypoint].transform.position - this.transform.position + vec;
                     steering = Mathf.Clamp(this.transform.InverseTransformDirection(desiredVel.normalized).x, -1f, 1f);
                 }

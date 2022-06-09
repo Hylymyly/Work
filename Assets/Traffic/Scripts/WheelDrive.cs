@@ -64,7 +64,6 @@ namespace TrafficSimulation{
             {
                 var wheel = wheels [i];
 
-                // Create wheel shapes only when needed.
                 if (leftWheelShape != null && wheel.transform.localPosition.x < 0)
                 {
                     var ws = Instantiate (leftWheelShape);
@@ -93,7 +92,6 @@ namespace TrafficSimulation{
             float handBrake = _brake > 0 ? brakeTorque : 0;
 
             foreach (WheelCollider wheel in wheels){
-                // Steer front wheels only
                 if (wheel.transform.localPosition.z > 0) wheel.steerAngle = angle;
 
                 if (wheel.transform.localPosition.z < 0) wheel.brakeTorque = handBrake;
@@ -102,7 +100,6 @@ namespace TrafficSimulation{
 
                 if (wheel.transform.localPosition.z >= 0 && driveType != DriveType.RearWheelDrive) wheel.motorTorque = torque;
 
-                // Update visual wheels if allowed
                 if(animateWheels){
                     Quaternion q;
                     Vector3 p;
@@ -115,12 +112,10 @@ namespace TrafficSimulation{
             }
 
 
-            //Apply speed
             float s = GetSpeedUnit(rb.velocity.magnitude);
             if(s > maxSpeed) rb.velocity = GetSpeedMS(maxSpeed) * rb.velocity.normalized;
 
             
-            //Apply downforce
             rb.AddForce(-transform.up * downForce * rb.velocity.magnitude);
         }
 
